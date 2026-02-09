@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO 2026 & Performance Meta -->
+    <title>Next-Flow-Ar | รับทำเว็บไซต์ Next.js ประสิทธิภาพสูง 2026</title>
+    <meta name="description" content="บริการรับทำเว็บไซต์ด้วย Next.js โหลดไวภายใต้ 1 วินาที โดย Ar จาก Next-Flow-Ar">
+
+    <!-- [FIX 1] Preconnect: ลดเวลาเชื่อมต่อ Network (DNS Lookup/Handshake) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://unpkg.com">
+
+    <!-- [FIX 2] Critical Fonts: ใช้ display=swap เพื่อให้ตัวอักษรแสดงทันที -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <!-- [FIX 3] Scripts Optimization: ใช้ defer เพื่อไม่ให้บล็อกการ Render หน้าจอ -->
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
+    <style>
+        /* [FIX 4] Inlined Critical CSS: ใส่สไตล์เบื้องต้นที่นี่เพื่อให้หน้าเว็บแสดงผลทันทีระหว่างรอ Tailwind โหลด */
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0a0a0a; color: white; opacity: 0; transition: opacity 0.3s ease-in; }
+        .loaded { opacity: 1; } /* ป้องกันหน้าเว็บกะพริบ (FOUC) */
+        
+        .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="selection:bg-indigo-500/30 selection:text-indigo-200">
+
+    <header>
+        <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6">
+            <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+                <div class="flex items-center gap-2 group cursor-pointer">
+                    <div class="w-10 h-10 bg-gradient-to-br from-indigo-600 to-violet-600 rounded-xl flex items-center justify-center">
+                        <i data-lucide="rocket" class="text-white w-6 h-6"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tighter">Next-Flow-<span class="text-indigo-500">Ar</span></span>
+                </div>
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
+                    <a href="#features" class="hover:text-white transition-colors">จุดเด่น</a>
+                    <a href="#pricing" class="hover:text-white transition-colors">ราคา</a>
+                    <!-- Updated: Link to Fastwork -->
+                    <a href="https://fastwork.co/user/sirawichz/web-development-51219004" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-full shadow-lg shadow-indigo-500/20 transition-all active:scale-95">
+                        จ้างงานตอนนี้
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative pt-40 pb-20 overflow-hidden text-center px-6">
+            <div class="max-w-7xl mx-auto">
+                <h1 class="text-5xl md:text-8xl font-extrabold tracking-tight mb-8 leading-tight animate-fade-in">
+                    สร้างเว็บไซต์ให้ <span class="text-indigo-400">ลื่นไหล</span> <br />
+                    ด้วย <span class="underline decoration-indigo-500/50 underline-offset-8">Next.js</span>
+                </h1>
+                <p class="max-w-2xl mx-auto text-lg text-zinc-400 mb-12 animate-fade-in" style="animation-delay: 0.2s">
+                    โซลูชันเว็บความเร็วสูง 2026 แก้ปัญหาเว็บอืดด้วยเทคโนโลยีระดับโลก โดย Next-Flow-Ar
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <!-- Updated: Hero Action Link -->
+                    <a href="https://fastwork.co/user/sirawichz/web-development-51219004" target="_blank" rel="noopener noreferrer" class="px-10 py-5 bg-white text-black font-extrabold rounded-2xl hover:bg-zinc-200 transition-all flex items-center gap-2">
+                        คุยโปรเจกต์กับ Ar <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section (Example) -->
+        <section id="pricing" class="py-24 bg-zinc-950/50">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4">แพ็กเกจการให้บริการ</h2>
+                    <p class="text-zinc-400">เลือกโซลูชันที่ตอบโจทย์ธุรกิจของคุณมากที่สุด</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Starter Flow -->
+                    <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-3xl flex flex-col">
+                        <h3 class="text-xl font-bold mb-2">Starter Flow</h3>
+                        <div class="text-3xl font-black mb-4">8,XXX <span class="text-sm font-normal text-zinc-500">/เริ่ม</span></div>
+                        <ul class="text-sm text-zinc-400 space-y-3 mb-8 flex-grow">
+                            <li><i data-lucide="check" class="inline w-4 h-4 text-indigo-500 mr-2"></i> 1 Page Next.js Performance</li>
+                            <li><i data-lucide="check" class="inline w-4 h-4 text-indigo-500 mr-2"></i> Tailwind CSS Design</li>
+                            <li><i data-lucide="check" class="inline w-4 h-4 text-indigo-500 mr-2"></i> SEO Optimization</li>
+                        </ul>
+                        <a href="https://fastwork.co/user/sirawichz/web-development-51219004" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-zinc-800 hover:bg-zinc-700 text-white text-center font-bold rounded-xl transition-all">จองคิวงาน</a>
+                    </div>
+
+                    <!-- Business Flow (Recommended) -->
+                    <div class="bg-zinc-900 border-2 border-indigo-600 p-8 rounded-3xl flex flex-col relative scale-105 z-10 shadow-2xl shadow-indigo-500/10">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-indigo-600 text-xs font-bold px-4 py-1 rounded-full">RECOMMENDED</div>
+                        <h3 class="text-xl font-bold mb-2">Business Flow</h3>
+                        <div class="text-3xl font-black mb-4">1X,XXX <span class="text-sm font-normal text-zinc-500">/เริ่ม</span></div>
+                        <ul class="text-sm text-zinc-100 space-y-3 mb-8 flex-grow">
+                            <li><i data-lucide="check" class="inline w-4 h-4 text-indigo-400 mr-2"></i> Up to 10 Pages Content</li>
+                            <li><i data-lucide="check" class="inline w-4 h-4 text-indigo-400 mr-2"></i> Headless CMS Integration</li>
+                            <li><i data-lucide="check" class="inline w-4 h-4 text-indigo-400 mr-2"></i> Advanced SEO Schema</li>
+                        </ul>
+                        <a href="https://fastwork.co/user/sirawichz/web-development-51219004" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-indigo-600 hover:bg-indigo-500 text-white text-center font-bold rounded-xl transition-all shadow-lg shadow-indigo-600/20">จองคิวงาน</a>
+                    </div>
+
+                    <!-- Ultimate Flow -->
+                    <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-3xl flex flex-col">
+                        <h3 class="text-xl font-bold mb-2">Ultimate Flow</h3>
+                        <div class="text-3xl font-black mb-4 italic">Custom</div>
+                        <ul class="text-sm text-zinc-400 space-y-3 mb-8 flex-grow">
+                            <li><i data-lucide="check" class="inline w-4 h-4 text-indigo-500 mr-2"></i> Full-stack Capabilities</li>
+                            <li><i data-lucide="check" class="inline w-4 h-4 text-indigo-500 mr-2"></i> Database Integration</li>
+                            <li><i data-lucide="check" class="inline w-4 h-4 text-indigo-500 mr-2"></i> Complex Web Application</li>
+                        </ul>
+                        <a href="https://fastwork.co/user/sirawichz/web-development-51219004" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-zinc-800 hover:bg-zinc-700 text-white text-center font-bold rounded-xl transition-all">ปรึกษาโปรเจกต์</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="features" class="py-24 text-center">
+            <h2 class="text-3xl font-bold mb-4">เทคโนโลยีระดับโลก เพื่อธุรกิจของคุณ</h2>
+            <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 mt-12 px-6">
+                <div class="p-4 bg-zinc-900 rounded-2xl border border-zinc-800"><i data-lucide="zap" class="mx-auto mb-2 text-yellow-400"></i><p class="text-xs uppercase font-bold text-zinc-500">Fast Load</p></div>
+                <div class="p-4 bg-zinc-900 rounded-2xl border border-zinc-800"><i data-lucide="shield" class="mx-auto mb-2 text-green-400"></i><p class="text-xs uppercase font-bold text-zinc-500">Secure</p></div>
+                <div class="p-4 bg-zinc-900 rounded-2xl border border-zinc-800"><i data-lucide="search" class="mx-auto mb-2 text-indigo-400"></i><p class="text-xs uppercase font-bold text-zinc-500">SEO Ready</p></div>
+                <div class="p-4 bg-zinc-900 rounded-2xl border border-zinc-800"><i data-lucide="cpu" class="mx-auto mb-2 text-purple-400"></i><p class="text-xs uppercase font-bold text-zinc-500">Scalable</p></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-20 border-t border-zinc-900 bg-black text-center px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-left">
+                <span class="text-xl font-bold tracking-tighter">Next-Flow-<span class="text-indigo-500">Ar</span></span>
+                <p class="text-zinc-600 text-xs mt-1">High-Performance Web Solutions © 2026</p>
+            </div>
+            <div class="flex gap-6 text-sm text-zinc-500 font-bold">
+                <a href="https://fastwork.co/user/sirawichz/web-development-51219004" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors underline decoration-indigo-500/50">Fastwork Profile</a>
+                <a href="#" class="hover:text-white transition-colors">Portfolio</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Floating Action Button (Mobile) -->
+    <a href="https://fastwork.co/user/sirawichz/web-development-51219004" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 md:hidden w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center text-white shadow-2xl shadow-indigo-600/40 border-4 border-black z-50 transition-transform active:scale-90">
+        <i data-lucide="message-square"></i>
+    </a>
+
+    <script>
+        // [FIX 5] Wait for Tailwind: รอให้ Tailwind ประมวลผลเสร็จก่อนค่อยโชว์หน้าเว็บ
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        });
+
+        // Navbar Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('bg-black/80', 'backdrop-blur-md', 'py-4', 'border-b', 'border-zinc-800');
+                nav.classList.remove('py-6');
+            } else {
+                nav.classList.remove('bg-black/80', 'backdrop-blur-md', 'py-4', 'border-b', 'border-zinc-800');
+                nav.classList.add('py-6');
+            }
+        }, { passive: true });
+    </script>
+</body>
+</html>
