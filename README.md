@@ -71,7 +71,7 @@ const lineExpertise = {
 - 🎯 Product PR planning and CRM management
 - 📱 LINE OA and social media channel management
 
-#### 🤖 **LINE Business Intelligence Project** | Full Stack Developer
+#### 🤖 **Web Developer** | LINE Business Intelligence Project
 *Nov 2020 - Oct 2022*
 - **Technologies:** Expo Web, Node.js, LINE Notify, PM2
 - 🚀 **Dashboard Notifications:** Real-time alerts to LINE groups (100% information coverage)
