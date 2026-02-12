@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth" style="overflow-x:hidden;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO 2026 & Performance Meta -->
+    <title>Projects | Next-Flow-Ar | Professional Web Developer Portfolio</title>
+    <meta name="description" content="โปรเจกต์ที่โดดเด่นของศิรวิชญ์ เหลาแหลม - Full Stack Developer ผู้เชี่ยวชาญด้าน Next.js และ Web Performance">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://unpkg.com">
+
+    <!-- Sarabun Font for Thai HR-friendly reading -->
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Scripts Optimization -->
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
+    <style>
+        /* HR-friendly Blue-White Theme */
+        body { 
+            font-family: 'Sarabun', sans-serif; 
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); 
+            color: #1e293b; 
+            opacity: 0; 
+            transition: opacity 0.3s ease-in;
+            overflow-x: hidden;
+        }
+        .loaded { opacity: 1; }
+        
+        /* Professional Blue Color Scheme */
+        .primary-blue { background-color: #3b82f6; }
+        .light-blue { background-color: #dbeafe; }
+        .text-primary-blue { color: #3b82f6; }
+        .border-blue { border-color: #3b82f6; }
+        
+        /* HR-friendly Card Styles */
+        .hr-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .hr-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* Bullet Point Styles for HR Scanning */
+        .hr-bullet {
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        .hr-bullet::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background-color: #3b82f6;
+            border-radius: 50%;
+        }
+        
+        /* Animations */
+        .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* Navigation Styles */
+        .nav-link {
+            color: #64748b;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #3b82f6;
+        }
+        
+        /* Project Card Styles */
+        .project-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .project-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .tech-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #dbeafe;
+            color: #3b82f6;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            margin: 2px;
+        }
+        
+        /* Mobile Responsive Overrides */
+        @media (max-width: 767px) {
+            .hr-card {
+                padding: 12px;
+                overflow: hidden;
+            }
+            .hr-bullet {
+                padding-left: 20px;
+            }
+            .hr-bullet::before {
+                width: 6px;
+                height: 6px;
+                top: 9px;
+            }
+        }
+    </style>
+</head>
+<body class="selection:bg-blue-500/20 selection:text-blue-800">
+
+    <header>
+        <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6 bg-white/90 backdrop-blur-md border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+                <div class="flex items-center gap-2 group cursor-pointer">
+                    <div class="w-10 h-10 primary-blue rounded-xl flex items-center justify-center">
+                        <i data-lucide="rocket" class="text-white w-6 h-6"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tighter">Next-Flow-<span class="text-primary-blue">Ar</span></span>
+                </div>
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="index.html" class="nav-link">หน้าแรก</a>
+                    <a href="about.html" class="nav-link">เกี่ยวกับฉัน</a>
+                    <a href="projects.html" class="nav-link">โปรเจกต์</a>
+                    <a href="https://fastwork.co/user/sirawichz/web-development-51219004" target="_blank" rel="noopener noreferrer" class="primary-blue hover:bg-blue-600 text-white px-5 py-2.5 rounded-full shadow-lg transition-all active:scale-95">
+                        ติดต่อ
+                    </a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6 text-gray-700"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 md:hidden hidden">
+        <div class="fixed inset-0 bg-black/50" id="mobile-menu-backdrop"></div>
+        <div class="fixed right-0 top-0 h-full w-80 bg-white shadow-xl transform translate-x-full transition-transform duration-300" id="mobile-menu-panel">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <span class="text-xl font-bold">เมนู</span>
+                    <button id="mobile-menu-close" class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors">
+                        <i data-lucide="x" class="w-6 h-6 text-gray-700"></i>
+                    </button>
+                </div>
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="nav-link py-3 px-4 rounded-lg hover:bg-gray-100 transition-colors">หน้าแรก</a>
+                    <a href="about.html" class="nav-link py-3 px-4 rounded-lg hover:bg-gray-100 transition-colors">เกี่ยวกับฉัน</a>
+                    <a href="projects.html" class="nav-link py-3 px-4 rounded-lg hover:bg-gray-100 transition-colors">โปรเจกต์</a>
+                    <a href="https://fastwork.co/user/sirawichz/web-development-51219004" target="_blank" rel="noopener noreferrer" class="primary-blue hover:bg-blue-600 text-white px-5 py-3 rounded-full shadow-lg transition-all active:scale-95 text-center font-medium">
+                        ติดต่อ
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="pt-24 overflow-x-hidden">
+        <!-- Hero Section -->
+        <section class="py-16 px-4 md:px-6">
+            <div class="max-w-7xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 text-primary-blue">โปรเจกต์ของฉัน</h1>
+                <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                    ผลงานที่โดดเด่นและสร้างคุณค่าให้กับธุรกิจ พร้อมเทคโนโลยีที่ทันสมัยและการแก้ปัญหาเชิงสร้างสรรค์
+                </p>
+                <div class="flex flex-wrap justify-center gap-3 mb-12">
+                    <span class="tech-badge">Next.js</span>
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">LINE OA</span>
+                    <span class="tech-badge">Laravel</span>
+                    <span class="tech-badge">MongoDB</span>
+                    <span class="tech-badge">PostgreSQL</span>
+                    <span class="tech-badge">Expo Web</span>
+                    <span class="tech-badge">PM2</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-16 px-4 md:px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
+                    
+                    <!-- LINE Business Intelligence Project -->
+                    <div class="project-card animate-fade-in">
+                        <div class="p-6">
+                            <div class="flex items-start gap-4 mb-4">
+                                <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="message-circle" class="text-white w-6 h-6"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold mb-2">ระบบบริหารจัดการข้อมูลเชิงธุรกิจผ่าน LINE</h3>
+                                    <p class="text-sm text-green-600 font-medium mb-3">LINE Business Intelligence</p>
+                                    <p class="text-sm text-gray-600 mb-4">พฤศจิกายน 2563 - ตุลาคม 2565</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h4 class="font-semibold mb-2">เทคโนโลยีที่ใช้:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-badge">Expo Web</span>
+                                    <span class="tech-badge">Node.js</span>
+                                    <span class="tech-badge">LINE Notify</span>
+                                    <span class="tech-badge">PM2</span>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-3">
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="bell" class="w-5 h-5 text-green-600 flex-shrink-0 mt-1"></i>
+                                    <div>
+                                        <strong>แดชบอร์ดแจ้งเตือนผ่าน LINE:</strong> พัฒนาเครื่องมือสำหรับผู้ดูแลระบบเพื่อแจ้งเตือนข้อมูลไปยังกลุ่มต่าง ๆ ทันที
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="shield" class="w-5 h-5 text-green-600 flex-shrink-0 mt-1"></i>
+                                    <div>
+                                        <strong>ระบบฟอร์มและควบคุมสิทธิ์:</strong> สร้างฟอร์มที่กำหนดสิทธิ์การเข้าถึงได้ทั้งระดับบุคคลและระดับแผนก
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="bot" class="w-5 h-5 text-green-600 flex-shrink-0 mt-1"></i>
+                                    <div>
+                                        <strong>บอทจัดการการขายอัตโนมัติ:</strong> สร้าง LINE Bot เพื่อเก็บข้อมูลลูกค้าจากแชทโดยอัตโนมัติ
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 pt-4 border-t">
+                                <div class="flex items-center justify-between">
+                                    <div class="text-sm text-gray-600">
+                                        <strong>ผลลัพธ์:</strong> 100% ความครบถ้วนในการกระจายข้อมูล
+                                    </div>
+                                    <a href="https://fastwork.co/user/sirawichz/web-development-51219004" target="_blank" class="text-primary-blue hover:underline text-sm font-medium">
+                                        ดูรายละเอียด →
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Faculty Digital Transformation Project -->
+                    <div class="project-card animate-fade-in" style="animation-delay: 0.2s">
+                        <div class="p-6">
+                            <div class="flex items-start gap-4 mb-4">
+                                <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="graduation-cap" class="text-white w-6 h-6"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold mb-2">การปรับเปลี่ยนสู่ระบบดิจิทัลและการตลาดของคณะ</h3>
+                                    <p class="text-sm text-blue-600 font-medium mb-3">Faculty Digital Transformation & Marketing</p>
+                                    <p class="text-sm text-gray-600 mb-4">เมษายน 2563 - ตุลาคม 2563</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h4 class="font-semibold mb-2">เทคโนโลยีที่ใช้:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-badge">Laravel</span>
+                                    <span class="tech-badge">MySQL</span>
+                                    <span class="tech-badge">Facebook Ads</span>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-3">
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="refresh-cw" class="w-5 h-5 text-blue-600 flex-shrink-0 mt-1"></i>
+                                    <div>
+                                        <strong>การย้ายระบบ WordPress เป็น Laravel:</strong> ย้ายเว็บไซต์ไปยัง Laravel เพื่อความปลอดภัยและประสิทธิภาพที่ดีขึ้น
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="palette" class="w-5 h-5 text-blue-600 flex-shrink-0 mt-1"></i>
+                                    <div>
+                                        <strong>ออกแบบสื่อโฆษณาเชิงสร้างสรรค์:</strong> จัดทำแบนเนอร์และวิดีโอสำหรับโฆษณาบน Facebook
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 pt-4 border-t">
+                                <div class="flex items-center justify-between">
+                                    <div class="text-sm text-gray-600">
+                                        <strong>ผลลัพธ์:</strong> เพิ่มความเร็วและความปลอดภัยของระบบ
+                                    </div>
+                                    <a href="https://fastwork.co/user/sirawichz/web-development-51219004" target="_blank" class="text-primary-blue hover:underline text-sm font-medium">
+                                        ดูรายละเอียด →
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Online Sales Consultant Project -->
+                    <div class="project-card animate-fade-in" style="animation-delay: 0.4s">
+                        <div class="p-6">
+                            <div class="flex items-start gap-4 mb-4">
+                                <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="shopping-cart" class="text-white w-6 h-6"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold mb-2">ที่ปรึกษาการขายผ่านสื่อออนไลน์</h3>
+                                    <p class="text-sm text-purple-600 font-medium mb-3">Digital Sales & CRM Management</p>
+                                    <p class="text-sm text-gray-600 mb-4">มกราคม 2566 - ตุลาคม 2567</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h4 class="font-semibold mb-2">เทคโนโลยีที่ใช้:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-badge">LINE OA</span>
+                                    <span class="tech-badge">Facebook</span>
+                                    <span class="tech-badge">CRM Tools</span>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-3">
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="target" class="w-5 h-5 text-purple-600 flex-shrink-0 mt-1"></i>
+                                    <div>
+                                        <strong>วางแผนประชาสัมพันธ์ผลิตภัณฑ์:</strong> บริหารจัดการความสัมพันธ์ลูกค้า (CRM) ผ่านช่องทางออนไลน์
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="users" class="w-5 h-5 text-purple-600 flex-shrink-0 mt-1"></i>
+                                    <div>
+                                        <strong>จัดการสื่อสังคมออนไลน์:</strong> ดูแล LINE OA และสื่อสังคมออนไลน์ทุกรูปแบบ
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 pt-4 border-t">
+                                <div class="flex items-center justify-between">
+                                    <div class="text-sm text-gray-600">
+                                        <strong>ผลลัพธ์:</strong> เพิ่มการมองเห็นและการมีส่วนร่วมของลูกค้า
+                                    </div>
+                                    <a href="https://fastwork.co/user/sirawichz/web-development-51219004" target="_blank" class="text-primary-blue hover:underline text-sm font-medium">
+                                        ดูรายละเอียด →
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Administrative Management Project -->
+                    <div class="project-card animate-fade-in" style="animation-delay: 0.6s">
+                        <div class="p-6">
+                            <div class="flex items-start gap-4 mb-4">
+                                <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="briefcase" class="text-white w-6 h-6"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold mb-2">ผู้ช่วยหัวหน้าแผนกฝ่ายบริหารพนักงาน</h3>
+                                    <p class="text-sm text-orange-600 font-medium mb-3">Administrative Management</p>
+                                    <p class="text-sm text-gray-600 mb-4">พฤศจิกายน 2567 - ธันวาคม 2568</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h4 class="font-semibold mb-2">ทักษะที่ใช้:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-badge">Team Management</span>
+                                    <span class="tech-badge">Operations Planning</span>
+                                    <span class="tech-badge">Reporting</span>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-3">
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="clipboard-list" class="w-5 h-5 text-orange-600 flex-shrink-0 mt-1"></i>
+                                    <div>
+                                        <strong>จัดการการวางแผนการดำเนินงาน:</strong> วางแผนและประสานงานระหว่างทีม
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="file-text" class="w-5 h-5 text-orange-600 flex-shrink-0 mt-1"></i>
+                                    <div>
+                                        <strong>รายงานผลการปฏิบัติงาน:</strong> รายงานผลการดำเนินงานต่อผู้บริหาร
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 pt-4 border-t">
+                                <div class="flex items-center justify-between">
+                                    <div class="text-sm text-gray-600">
+                                        <strong>ผลลัพธ์:</strong> ปรับปรุงประสิทธิภาพการทำงานของทีม
+                                    </div>
+                                    <a href="https://fastwork.co/user/sirawichz/web-development-51219004" target="_blank" class="text-primary-blue hover:underline text-sm font-medium">
+                                        ดูรายละเอียด →
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Overview Section -->
+        <section class="py-16 px-4 md:px-6 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-12 text-primary-blue">ทักษะและเทคโนโลยี</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 primary-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="code" class="text-white w-8 h-8"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-3">Frontend Development</h3>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="tech-badge">Next.js</span>
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">CSS3</span>
+                            <span class="tech-badge">TailwindCSS</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 primary-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="server" class="text-white w-8 h-8"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-3">Backend Development</h3>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">Express</span>
+                            <span class="tech-badge">Laravel</span>
+                            <span class="tech-badge">PHP</span>
+                            <span class="tech-badge">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 primary-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="database" class="text-white w-8 h-8"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-3">Database & Tools</h3>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="tech-badge">MongoDB</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">LINE OA</span>
+                            <span class="tech-badge">PM2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-20 border-t border-gray-300 bg-white text-center px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-left">
+                <span class="text-xl font-bold tracking-tighter">Next-Flow-<span class="text-primary-blue">Ar</span></span>
+                <p class="text-gray-600 text-xs mt-1">High-Performance Web Solutions 2026</p>
+            </div>
+            <div class="flex gap-6 text-sm">
+                <a href="https://fastwork.co/user/sirawichz/web-development-51219004" target="_blank" rel="noopener noreferrer" class="text-primary-blue hover:underline">Fastwork Profile</a>
+                <a href="about.html" class="text-gray-600 hover:text-primary-blue transition-colors">About</a>
+                <a href="index.html" class="text-gray-600 hover:text-primary-blue transition-colors">Home</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Floating Action Button (Mobile) -->
+    <a href="https://fastwork.co/user/sirawichz/web-development-51219004" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 md:hidden w-16 h-16 primary-blue rounded-full flex items-center justify-center text-white shadow-2xl shadow-blue-600/40 border-4 border-white z-50 transition-transform active:scale-90">
+        <i data-lucide="message-square"></i>
+    </a>
+
+    <script>
+        // Initialize Lucide icons
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+            
+            // Fade in animation
+            document.body.classList.add('loaded');
+            
+            // Mobile menu functionality
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuClose = document.getElementById('mobile-menu-close');
+            const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+            const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+            
+            function openMobileMenu() {
+                mobileMenu.classList.remove('hidden');
+                setTimeout(() => {
+                    mobileMenuPanel.classList.remove('translate-x-full');
+                }, 10);
+            }
+            
+            function closeMobileMenu() {
+                mobileMenuPanel.classList.add('translate-x-full');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+            }
+            
+            mobileMenuBtn.addEventListener('click', openMobileMenu);
+            mobileMenuClose.addEventListener('click', closeMobileMenu);
+            mobileMenuBackdrop.addEventListener('click', closeMobileMenu);
+            
+            // Navbar scroll effect
+            let lastScroll = 0;
+            const navbar = document.getElementById('navbar');
+            
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                
+                if (currentScroll <= 0) {
+                    navbar.classList.remove('py-4');
+                    navbar.classList.add('py-6');
+                } else {
+                    navbar.classList.remove('py-6');
+                    navbar.classList.add('py-4');
+                }
+                
+                lastScroll = currentScroll;
+            });
+        });
+    </script>
+
+</body>
+</html>
