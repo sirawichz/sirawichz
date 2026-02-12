@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth" style="overflow-x:hidden;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO 2026 & Performance Meta -->
+    <title>About Me | Next-Flow-Ar | Professional Web Developer</title>
+    <meta name="description" content="ศิรวิชญ์ เหลาแหลม - Full Stack Developer ผู้เชี่ยวชาญด้าน Next.js และ Web Performance">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://unpkg.com">
+
+    <!-- Sarabun Font for Thai HR-friendly reading -->
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Scripts Optimization -->
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
+    <style>
+        /* HR-friendly Blue-White Theme */
+        body { 
+            font-family: 'Sarabun', sans-serif; 
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); 
+            color: #1e293b; 
+            opacity: 0; 
+            transition: opacity 0.3s ease-in;
+            overflow-x: hidden;
+        }
+        .loaded { opacity: 1; }
+        
+        /* Professional Blue Color Scheme */
+        .primary-blue { background-color: #3b82f6; }
+        .light-blue { background-color: #dbeafe; }
+        .text-primary-blue { color: #3b82f6; }
+        .border-blue { border-color: #3b82f6; }
+        
+        /* HR-friendly Card Styles */
+        .hr-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .hr-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* Bullet Point Styles for HR Scanning */
+        .hr-bullet {
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        .hr-bullet::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background-color: #3b82f6;
+            border-radius: 50%;
+        }
+        
+        /* Animations */
+        .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* Navigation Styles */
+        .nav-link {
+            color: #64748b;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #3b82f6;
+        }
+        
+        /* Mobile Responsive Overrides */
+        @media (max-width: 767px) {
+            .hr-card {
+                padding: 12px;
+                overflow: hidden;
+            }
+            .hr-bullet {
+                padding-left: 20px;
+            }
+            .hr-bullet::before {
+                width: 6px;
+                height: 6px;
+                top: 9px;
+            }
+            .mockup-sidebar {
+                display: none;
+            }
+            .mockup-mobile-header {
+                display: block;
+            }
+            .mockup-mobile-nav {
+                display: flex;
+            }
+            .mockup-wrapper {
+                flex-direction: column;
+            }
+        }
+        @media (min-width: 768px) {
+            .mockup-mobile-header {
+                display: none;
+            }
+            .mockup-mobile-nav {
+                display: none;
+            }
+            .mockup-sidebar {
+                display: block;
+            }
+            .mockup-wrapper {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+<body class="selection:bg-blue-500/20 selection:text-blue-800">
+
+    <header>
+        <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6 bg-white/90 backdrop-blur-md border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+                <div class="flex items-center gap-2 group cursor-pointer">
+                    <div class="w-10 h-10 primary-blue rounded-xl flex items-center justify-center">
+                        <i data-lucide="user" class="text-white w-6 h-6"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tighter">About <span class="text-primary-blue">Me</span></span>
+                </div>
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="index.html" class="nav-link">หน้าแรก</a>
+                    <a href="#about" class="nav-link">ประวัติ</a>
+                    <a href="#skills" class="nav-link">ทักษะ</a>
+                    <a href="#experience" class="nav-link">ประสบการณ์</a>
+                    <a href="https://fastwork.co/user/sirawichz/web-development-51219004" target="_blank" rel="noopener noreferrer" class="primary-blue hover:bg-blue-600 text-white px-5 py-2.5 rounded-full shadow-lg transition-all active:scale-95">
+                        ติดต่อ
+                    </a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6 text-gray-700"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 md:hidden hidden">
+        <div class="fixed inset-0 bg-black/50" id="mobile-menu-backdrop"></div>
+        <div class="fixed right-0 top-0 h-full w-80 bg-white shadow-xl transform translate-x-full transition-transform duration-300" id="mobile-menu-panel">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <span class="text-xl font-bold">เมนู</span>
+                    <button id="mobile-menu-close" class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors">
+                        <i data-lucide="x" class="w-6 h-6 text-gray-700"></i>
+                    </button>
+                </div>
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="nav-link py-3 px-4 rounded-lg hover:bg-gray-100 transition-colors">หน้าแรก</a>
+                    <a href="#about" class="nav-link py-3 px-4 rounded-lg hover:bg-gray-100 transition-colors">ประวัติ</a>
+                    <a href="#skills" class="nav-link py-3 px-4 rounded-lg hover:bg-gray-100 transition-colors">ทักษะ</a>
+                    <a href="#experience" class="nav-link py-3 px-4 rounded-lg hover:bg-gray-100 transition-colors">ประสบการณ์</a>
+                    <a href="#projects" class="nav-link py-3 px-4 rounded-lg hover:bg-gray-100 transition-colors">โปรเจกต์</a>
+                    <a href="https://fastwork.co/user/sirawichz/web-development-51219004" target="_blank" rel="noopener noreferrer" class="primary-blue hover:bg-blue-600 text-white px-5 py-3 rounded-full shadow-lg transition-all active:scale-95 text-center font-medium">
+                        ติดต่อ
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="pt-24 overflow-x-hidden">
+        <!-- Hero Section - Professional Introduction -->
+        <section class="py-16 px-4 md:px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-4 md:gap-8 items-start">
+                    <!-- Profile Card -->
+                    <div class="md:col-span-1">
+                        <div class="hr-card text-center sticky top-24">
+                            <div class="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
+                                <i data-lucide="user" class="text-white w-16 h-16"></i>
+                            </div>
+                            <h1 class="text-2xl font-bold mb-2">ศิรวิชญ์ เหลาแหลม</h1>
+                            <p class="text-primary-blue font-semibold mb-4">Full Stack Developer</p>
+                            <div class="flex justify-center gap-3 mb-6">
+                                <a href="https://fastwork.co/user/sirawichz/web-development-51219004" target="_blank" class="w-10 h-10 light-blue rounded-full flex items-center justify-center hover:primary-blue transition-colors">
+                                    <i data-lucide="briefcase" class="w-5 h-5 text-primary-blue"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 light-blue rounded-full flex items-center justify-center hover:primary-blue transition-colors">
+                                    <i data-lucide="mail" class="w-5 h-5 text-primary-blue"></i>
+                                </a>
+                                <a href="https://github.com/sirawichz" target="_blank" class="w-10 h-10 light-blue rounded-full flex items-center justify-center hover:primary-blue transition-colors">
+                                    <i data-lucide="github" class="w-5 h-5 text-primary-blue"></i>
+                                </a>
+                            </div>
+                            <div class="text-left space-y-2">
+                                <div class="flex items-center gap-2 text-sm text-gray-600">
+                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                                    <span>กรุงเทพมหานคร</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-sm text-gray-600">
+                                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                                    <span>2+ ปีประสบการณ์</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div class="md:col-span-2 space-y-6 md:space-y-8 min-w-0">
+                        <!-- About Section -->
+                        <div id="about" class="hr-card animate-fade-in">
+                            <h2 class="text-2xl font-bold mb-6 text-primary-blue">เกี่ยวกับฉัน</h2>
+                            <div class="space-y-4 text-gray-700 leading-relaxed">
+                                <p>
+                                   นักพัฒนาแบบ Full-stack ที่ปรับตัวเก่ง ผู้เชี่ยวชาญด้านระบบหลังบ้านด้วย Node.js (Express) ที่มีประสิทธิภาพสูง มีความเชี่ยวชาญในการสร้างประสบการณ์ผู้ใช้งาน (UX) ที่ลื่นไหลด้วย MongoDB/PostgreSQL/MYSQL และส่งมอบโซลูชันแบบครบวงจร (End-to-end) สำหรับผลิตภัณฑ์เว็บที่มีผลกระทบสูง
+                                </p>
+                                <p>
+                                    มีความเข้าใจในการทำงานร่วมกับทีม สามารถสื่อสารกับทั้งฝั่ง Technical และ Business 
+                                    พร้อมนำเสนอแนวทางที่เหมาะสมเพื่อให้โปรเจกต์สำเร็จตามเป้าหมาย
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Core Skills Section -->
+                        <div id="skills" class="hr-card animate-fade-in" style="animation-delay: 0.2s">
+                            <h2 class="text-2xl font-bold mb-6 text-primary-blue">ทักษะหลัก</h2>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h3 class="font-semibold mb-4 text-gray-800">ภาษาโปรแกรม</h3>
+                                    <div class="space-y-3">
+                                        <div class="hr-bullet">
+                                            JavaScript, PHP, HTML5, CSS3
+                                        </div>
+                                    </div>
+                                    <h3 class="font-semibold mb-4 text-gray-800 mt-6">เทคโนโลยีที่เชี่ยวชาญ</h3>
+                                    <div class="space-y-3">
+                                        <div class="hr-bullet">
+                                            Node.js, Laravel, Expo Web, PM2, LINE Notify, LINE OA
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold mb-4 text-gray-800">ระบบฐานข้อมูล</h3>
+                                    <div class="space-y-3">
+                                        <div class="hr-bullet">
+                                            MongoDB, PostgreSQL, MySQL
+                                        </div>
+                                    </div>
+                                    <h3 class="font-semibold mb-4 text-gray-800 mt-6">ความเชี่ยวชาญอื่นๆ</h3>
+                                    <div class="space-y-3">
+                                        <div class="hr-bullet">
+                                            การวิเคราะห์พฤติกรรมผู้ใช้
+                                        </div>
+                                        <div class="hr-bullet">
+                                            การบริหารจัดการทีมและบุคลากร
+                                        </div>
+                                        <div class="hr-bullet">
+                                            การจัดทำรายงาน
+                                        </div>
+                                        <div class="hr-bullet">
+                                            การสร้างสรรค์สื่อดิจิทัลครบวงจร (แบนเนอร์ และ วิดีโอ)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Experience Section -->
+                        <div id="experience" class="hr-card animate-fade-in" style="animation-delay: 0.4s">
+                            <h2 class="text-2xl font-bold mb-6 text-primary-blue">ประสบการณ์การทำงาน</h2>
+                            <div class="space-y-6">
+                                <div class="border-l-4 border-green-400 pl-2 md:pl-6">
+                                    <h3 class="font-semibold text-lg">ผู้ช่วยหัวหน้าแผนกฝ่ายบริหารพนักงาน</h3>
+                                    <p class="text-primary-blue font-medium">พฤศจิกายน 2567 - ธันวาคม 2568</p>
+                                    <div class="mt-3 space-y-2">
+                                        <div class="hr-bullet">
+                                            จัดการการวางแผนการดำเนินงาน, การประสานงานระหว่างทีม และการรายงานผลการปฏิบัติงานต่อผู้บริหาร
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border-l-4 border-purple-400 pl-2 md:pl-6">
+                                    <h3 class="font-semibold text-lg">ที่ปรึกษาการขายผ่านสื่อออนไลน์</h3>
+                                    <p class="text-primary-blue font-medium">มกราคม 2566 - ตุลาคม 2567</p>
+                                    <div class="mt-3 space-y-2">
+                                        <div class="hr-bullet">
+                                            วางแผนประชาสัมพันธ์ผลิตภัณฑ์และบริหารจัดการความสัมพันธ์ลูกค้า (CRM) ผ่านช่องทาง Line OA และสื่อสังคมออนไลน์ทุกรูปแบบ
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border-l-4 border-orange-400 pl-2 md:pl-6">
+                                    <h3 class="font-semibold text-lg">โปรเจกต์: ระบบบริหารจัดการข้อมูลเชิงธุรกิจผ่าน LINE (LINE Business Intelligence)</h3>
+                                    <p class="text-primary-blue font-medium">พฤศจิกายน 2563 - ตุลาคม 2565</p>
+                                    <p class="text-sm text-gray-600 mb-3">เทคโนโลยีที่ใช้: Expo Web, Node.js, LINE Notify, PM2</p>
+                                    <div class="mt-3 space-y-2">
+                                        <div class="hr-bullet">
+                                            <strong>แดชบอร์ดแจ้งเตือนผ่าน LINE:</strong> พัฒนาเครื่องมือสำหรับผู้ดูแลระบบเพื่อแจ้งเตือนข้อมูลไปยังกลุ่มต่าง ๆ ทันที ช่วยให้การกระจายข้อมูลครบถ้วน 100% และขจัดปัญหาการสื่อสารตกหล่นภายในองค์กร
+                                        </div>
+                                        <div class="hr-bullet">
+                                            <strong>ระบบฟอร์มและควบคุมสิทธิ์ที่ปลอดภัย:</strong> สร้างฟอร์มที่กำหนดสิทธิ์การเข้าถึงได้ทั้งระดับบุคคลและระดับแผนก โดยเชื่อมโยงบัญชี LINE เข้ากับรหัสพนักงานเพื่อความปลอดภัยสูงสุดของข้อมูล
+                                        </div>
+                                        <div class="hr-bullet">
+                                            <strong>บอทจัดการการขายอัตโนมัติ:</strong> สร้าง LINE Bot เพื่อเก็บข้อมูลลูกค้าจากแชทโดยอัตโนมัติ ช่วยให้การส่งต่อข้อมูลเพื่อคำนวณค่าคอมมิชชันรวดเร็วและแม่นยำยิ่งขึ้น
+                                        </div>
+                                        <div class="hr-bullet">
+                                            <strong>การเชื่อมต่อเว็บเข้ากับระบบ LINE:</strong> ใช้ Expo Web และ Node.js ในการสร้างระบบที่รองรับทุกอุปกรณ์ (Mobile-responsive) เปลี่ยนขั้นตอนที่เคยทำด้วยมือให้เป็นระบบอัตโนมัติที่มีประสิทธิภาพ
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border-l-4 border-blue-400 pl-2 md:pl-6">
+                                    <h3 class="font-semibold text-lg">นักพัฒนาเว็บไซต์และฝ่ายสื่อสารการตลาด</h3>
+                                    <p class="text-primary-blue font-medium">เมษายน 2563 - ตุลาคม 2563</p>
+                                    <p class="text-sm text-gray-600 mb-3">โปรเจกต์: การปรับเปลี่ยนสู่ระบบดิจิทัลและการตลาดของคณะ (Faculty Digital Transformation & Marketing)</p>
+                                    <p class="text-sm text-gray-600 mb-3">เทคโนโลยีที่ใช้: Laravel</p>
+                                    <div class="mt-3 space-y-2">
+                                        <div class="hr-bullet">
+                                            <strong>การย้ายระบบจาก WordPress เป็น Laravel:</strong> ย้ายเว็บไซต์ไปยัง Laravel เพื่อให้ระบบมีความปลอดภัยมากขึ้น รวดเร็วขึ้น และง่ายต่อการจัดการในระยะยาว
+                                        </div>
+                                        <div class="hr-bullet">
+                                            <strong>ออกแบบสื่อโฆษณาเชิงสร้างสรรค์:</strong> จัดทำแบนเนอร์และวิดีโอสำหรับโฆษณาบน Facebook เพื่อเพิ่มการมองเห็นและเสริมสร้างภาพลักษณ์ที่เป็นมืออาชีพให้กับคณะ
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projects Section -->
+                        <div id="projects" class="hr-card animate-fade-in" style="animation-delay: 0.8s">
+                            <h2 class="text-2xl font-bold mb-6 text-primary-blue">โปรเจกต์ที่โดดเด่น</h2>
+                            <div class="space-y-6">
+                                <div class="border-l-4 border-green-500 pl-2 md:pl-6 overflow-hidden">
+                                    <div class="flex items-start gap-3 mb-4">
+                                        <div class="w-10 h-10 md:w-12 md:h-12 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <i data-lucide="message-circle" class="text-white w-5 h-5 md:w-6 md:h-6"></i>
+                                        </div>
+                                        <div class="min-w-0">
+                                            <h3 class="font-bold text-base md:text-lg mb-1 break-words">ระบบบริหารจัดการข้อมูลเชิงธุรกิจผ่าน LINE ให้กับบริษัทจัดการ Inventory</h3>
+                                            <p class="text-sm text-green-600 font-medium">LINE Business Intelligence</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm text-primary-blue font-medium mb-4">เทคโนโลยีที่ใช้: Expo Web, Node.js, LINE Notify, PM2</p>
+                                    
+                                    <!-- Mockup Section -->
+                                    <div class="mt-6 p-2 md:p-4 bg-gray-50 rounded-lg shadow-inner overflow-hidden">
+                                        <h4 class="text-base md:text-lg font-bold mb-4 text-gray-800">Mockup: หน้าจอระบบ LINE Business Intelligence</h4>
+                                        <div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-full">
+                                            <!-- Mobile Header (visible on small screens only) -->
+                                            <div class="mockup-mobile-header bg-gray-100 p-3 border-b">
+                                                <div class="flex items-center gap-3">
+                                                    <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                                        <i data-lucide="briefcase" class="text-white w-5 h-5"></i>
+                                                    </div>
+                                                    <div class="flex-1 min-w-0">
+                                                        <p class="font-semibold text-sm truncate">admin</p>
+                                                        <p class="text-xs text-gray-500">แผนก Administrator</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Mobile Tab Nav (visible on small screens only) -->
+                                            <div class="mockup-mobile-nav gap-2 overflow-x-auto px-3 py-2 border-b bg-white" style="display:none;">
+                                                <button class="flex items-center gap-1 px-3 py-1.5 bg-green-500 text-white rounded-lg text-xs whitespace-nowrap">
+                                                    <i data-lucide="file-text" class="w-3 h-3"></i>
+                                                    รายงานประกาศ
+                                                </button>
+                                                <button class="flex items-center gap-1 px-3 py-1.5 bg-gray-100 text-gray-700 rounded-lg text-xs whitespace-nowrap">
+                                                    <i data-lucide="home" class="w-3 h-3"></i>
+                                                    หน้าหลัก
+                                                </button>
+                                                <button class="flex items-center gap-1 px-3 py-1.5 bg-gray-100 text-gray-700 rounded-lg text-xs whitespace-nowrap">
+                                                    <i data-lucide="list" class="w-3 h-3"></i>
+                                                    ฟอร์ม
+                                                </button>
+                                            </div>
+                                            
+                                            <div class="mockup-wrapper flex">
+                                                <!-- Sidebar (hidden on mobile via CSS) -->
+                                                <div class="mockup-sidebar w-48 bg-gray-100 p-3 border-r flex-shrink-0">
+                                                    <div class="bg-white rounded-lg p-3 mb-3 shadow-sm">
+                                                        <div class="flex items-center gap-2 mb-2">
+                                                            <div class="w-9 h-9 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                                                <i data-lucide="briefcase" class="text-white w-4 h-4"></i>
+                                                            </div>
+                                                            <div class="flex-1 min-w-0">
+                                                                <p class="font-semibold text-xs truncate">บริษัทจัดการ Inventory</p>
+                                                                <p class="text-xs text-gray-500">Administrator</p>
+                                                            </div>
+                                                        </div>
+                                                        <nav class="space-y-1">
+                                                            <a href="#" class="flex items-center gap-2 px-2 py-1.5 text-gray-700 hover:bg-gray-200 rounded-lg">
+                                                                <i data-lucide="home" class="w-3 h-3"></i>
+                                                                <span class="text-xs">หน้าหลัก</span>
+                                                            </a>
+                                                            <a href="#" class="flex items-center gap-2 px-2 py-1.5 bg-green-500 text-white rounded-lg">
+                                                                <i data-lucide="file-text" class="w-3 h-3"></i>
+                                                                <span class="text-xs">รายงานประกาศ</span>
+                                                            </a>
+                                                            <a href="#" class="flex items-center gap-2 px-2 py-1.5 text-gray-700 hover:bg-gray-200 rounded-lg">
+                                                                <i data-lucide="list" class="w-3 h-3"></i>
+                                                                <span class="text-xs">หน้ารายการฟอร์ม</span>
+                                                            </a>
+                                                        </nav>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- Main Content -->
+                                                <div class="flex-1 p-3 md:p-4 min-w-0">
+                                                    <h5 class="text-sm md:text-base font-bold mb-3">รายงานประกาศ</h5>
+                                                    
+                                                    <!-- Filter Section -->
+                                                    <div class="bg-gray-50 rounded-lg p-2 md:p-3 mb-3">
+                                                        <div class="flex gap-2">
+                                                            <input type="text" placeholder="ค้นหาประกาศ..." class="flex-1 min-w-0 px-2 py-1.5 border rounded-lg text-xs">
+                                                            <button class="px-3 py-1.5 bg-green-500 text-white rounded-lg text-xs hover:bg-green-600 flex-shrink-0">
+                                                                <i data-lucide="search" class="w-3 h-3 inline"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <!-- Results -->
+                                                    <div class="space-y-2">
+                                                        <div class="bg-white border rounded-lg p-2 md:p-3">
+                                                            <div class="flex justify-between items-start mb-2">
+                                                                <div class="flex-1 min-w-0">
+                                                                    <h6 class="font-semibold text-xs md:text-sm">ประกาศด่วน: ปิดปรับปรุงระบบ</h6>
+                                                                    <p class="text-xs text-gray-600 mt-1 truncate">ระบบจะปิดปรับปรุงในวันศุกร์ที่ 15 เมษายน...</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex flex-wrap gap-x-3 gap-y-1 text-xs text-gray-500">
+                                                                <span class="flex items-center gap-1">
+                                                                    <i data-lucide="send" class="w-3 h-3"></i>
+                                                                    3 กลุ่ม
+                                                                </span>
+                                                                <span class="flex items-center gap-1">
+                                                                    <i data-lucide="eye" class="w-3 h-3"></i>
+                                                                    อ่าน 5
+                                                                </span>
+                                                                <span class="flex items-center gap-1">
+                                                                    <i data-lucide="eye-off" class="w-3 h-3"></i>
+                                                                    ไม่อ่าน 12
+                                                                </span>
+                                                                <span class="flex items-center gap-1">
+                                                                    <i data-lucide="user" class="w-3 h-3"></i>
+                                                                    ทีมพัฒนา
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <!-- Pagination -->
+                                                    <div class="flex items-center justify-center gap-1 mt-3">
+                                                        <button class="px-2 py-1 border rounded text-xs hover:bg-gray-50">ก่อนหน้า</button>
+                                                        <button class="px-2 py-1 bg-green-500 text-white rounded text-xs">1</button>
+                                                        <button class="px-2 py-1 border rounded text-xs hover:bg-gray-50">2</button>
+                                                        <button class="px-2 py-1 border rounded text-xs hover:bg-gray-50">3</button>
+                                                        <button class="px-2 py-1 border rounded text-xs hover:bg-gray-50">ถัดไป</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Mockup Section -->
+                                    
+                                    <div class="space-y-4">
+                                        <div class="hr-bullet flex items-start gap-3">
+                                            <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                                <i data-lucide="bell" class="w-4 h-4 text-green-600"></i>
+                                            </div>
+                                            <div>
+                                                <strong>แดชบอร์ดแจ้งเตือนผ่าน LINE:</strong> พัฒนาเครื่องมือสำหรับผู้ดูแลระบบเพื่อแจ้งเตือนข้อมูลไปยังกลุ่มต่าง ๆ ทันที ช่วยให้การกระจายข้อมูลครบถ้วน 100% และขจัดปัญหาการสื่อสารตกหล่นภายในองค์กร
+                                            </div>
+                                        </div>
+                                        <div class="hr-bullet flex items-start gap-3">
+                                            <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                                <i data-lucide="shield" class="w-4 h-4 text-green-600"></i>
+                                            </div>
+                                            <div>
+                                                <strong>ระบบฟอร์มและควบคุมสิทธิ์ที่ปลอดภัย:</strong> สร้างฟอร์มที่กำหนดสิทธิ์การเข้าถึงได้ทั้งระดับบุคคลและระดับแผนก โดยเชื่อมโยงบัญชี LINE เข้ากับรหัสพนักงานเพื่อความปลอดภัยสูงสุดของข้อมูล
+                                            </div>
+                                        </div>
+                                        <div class="hr-bullet flex items-start gap-3">
+                                            <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                                <i data-lucide="bot" class="w-4 h-4 text-green-600"></i>
+                                            </div>
+                                            <div>
+                                                <strong>บอทจัดการการขายอัตโนมัติ:</strong> สร้าง LINE Bot เพื่อเก็บข้อมูลลูกค้าจากแชทโดยอัตโนมัติ ช่วยให้การส่งต่อข้อมูลเพื่อคำนวณค่าคอมมิชชันรวดเร็วและแม่นยำยิ่งขึ้น
+                                            </div>
+                                        </div>
+                                        <div class="hr-bullet flex items-start gap-3">
+                                            <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                                <i data-lucide="smartphone" class="w-4 h-4 text-green-600"></i>
+                                            </div>
+                                            <div>
+                                                <strong>การเชื่อมต่อเว็บเข้ากับระบบ LINE:</strong> ใช้ Expo Web และ Node.js ในการสร้างระบบที่รองรับทุกอุปกรณ์ (Mobile-responsive) เปลี่ยนขั้นตอนที่เคยทำด้วยมือให้เป็นระบบอัตโนมัติที่มีประสิทธิภาพ
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Business Value Section -->
+                        <div class="hr-card animate-fade-in" style="animation-delay: 0.6s">
+                            <h2 class="text-2xl font-bold mb-6 text-primary-blue">มูลค่าที่มอบให้ธุรกิจ</h2>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="light-blue p-4 rounded-lg">
+                                    <i data-lucide="trending-up" class="w-8 h-8 text-primary-blue mb-3"></i>
+                                    <h3 class="font-semibold mb-2">เพิ่ม Conversion Rate</h3>
+                                    <p class="text-sm text-gray-700">ออกแบบ UX/UI ที่เน้นการใช้งานง่าย ช่วยเพิ่มอัตราการแปลงผู้เยี่ยมชมเป็นลูกค้า</p>
+                                </div>
+                                <div class="light-blue p-4 rounded-lg">
+                                    <i data-lucide="zap" class="w-8 h-8 text-primary-blue mb-3"></i>
+                                    <h3 class="font-semibold mb-2">ลดต้นทุนการบำรุงรักษา</h3>
+                                    <p class="text-sm text-gray-700">เขียนโค้ดที่ Clean และ Maintainable ลดเวลาและต้นทุนในการพัฒนาต่อ</p>
+                                </div>
+                                <div class="light-blue p-4 rounded-lg">
+                                    <i data-lucide="shield" class="w-8 h-8 text-primary-blue mb-3"></i>
+                                    <h3 class="font-semibold mb-2">ความปลอดภัยและเสถียร</h3>
+                                    <p class="text-sm text-gray-700">ใช้ Best Practices ด้าน Security และทดสอบอย่างละเอียดก่อน Deploy</p>
+                                </div>
+                                <div class="light-blue p-4 rounded-lg">
+                                    <i data-lucide="users" class="w-8 h-8 text-primary-blue mb-3"></i>
+                                    <h3 class="font-semibold mb-2">ทำงานร่วมกับทีมได้ดี</h3>
+                                    <p class="text-sm text-gray-700">มีทักษะการสื่อสารและประสานงาน พร้อมทำงานกับทีมหลากหลายสายอาชีพ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-gray-300 bg-white">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 text-center">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div>
+                    <span class="text-xl font-bold tracking-tighter">ศิรวิชญ์ เหลาแหลม</span>
+                    <p class="text-gray-600 text-sm mt-1">Full Stack Developer © 2026</p>
+                </div>
+                <div class="flex gap-6 text-sm">
+                    <a href="https://fastwork.co/user/sirawichz/web-development-51219004" target="_blank" rel="noopener noreferrer" class="text-primary-blue hover:underline">Fastwork Profile</a>
+                    <a href="index.html" class="text-gray-600 hover:text-primary-blue transition-colors">หน้าแรก</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Button -->
+    <a href="https://fastwork.co/user/sirawichz/web-development-51219004" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 w-16 h-16 primary-blue rounded-full flex items-center justify-center text-white shadow-2xl shadow-blue-600/40 border-4 border-white z-50 transition-transform active:scale-90">
+        <i data-lucide="message-square"></i>
+    </a>
+
+    <script>
+        // Wait for Tailwind
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+        const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+
+        function openMobileMenu() {
+            mobileMenu.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenuPanel.classList.remove('translate-x-full');
+            }, 10);
+        }
+
+        function closeMobileMenu() {
+            mobileMenuPanel.classList.add('translate-x-full');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+        }
+
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        mobileMenuBackdrop.addEventListener('click', closeMobileMenu);
+
+        // Close mobile menu when clicking on links
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                closeMobileMenu();
+            });
+        });
+
+        // Smooth Scroll for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
