@@ -129,7 +129,7 @@ A comprehensive business management solution through LINE platform
 
 📩 **Get In Touch:**
 - 💼 **Fastwork:** [Hire Me on Fastwork](https://fastwork.co/user/sirawichz/web-development-51219004)
-- 📧 **Email:** your-email@example.com
+- 📧 **Email:** sirawich.slaolam@gmail.com
 - 🐙 **GitHub:** [sirawichz](https://github.com/sirawichz)
 - 📍 **Location:** Bangkok, Thailand
 
