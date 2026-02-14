@@ -99,7 +99,7 @@ A comprehensive business management solution through LINE platform
 - ✅ Automated manual processes
 - ✅ Enhanced data security with employee-LINE account linking
 
-**Tech Stack:** `Expo Web` `Node.js` `LINE Notify` `PM2` `MongoDB`
+**Tech Stack:** `Expo Web` `Node.js` `LINE Notify` `PM2` `MYSQL`
 
 ---
 
